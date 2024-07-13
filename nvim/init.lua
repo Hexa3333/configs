@@ -1,5 +1,6 @@
 require "options"
 require "keymaps"
 require "plugins"
-require "cmp"
+require "completion"
 require "colorscheme"
+--require "lsp" -- runs lsp/init.lua

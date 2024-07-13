@@ -2,7 +2,7 @@
 --and are loaded at start (and in start directory)
 -- Ones that are labeled opt are lazy-loaded (and in opt directory)
 --    Things doesn't have to be labeled when they depend on events
---  (check :automod for nvim events)
+  --  (check :automod for nvim events)
 
 local fn = vim.fn
 
@@ -55,15 +55,24 @@ return packer.startup(function(use)
   -- INSTALL A MARKDOWN PREVIEWER
   use "ellisonleao/gruvbox.nvim"
 
+  -- BUNLARA BAKIN
   -- cmp plugins
-  use "L3MON4D3/LuaSnip" -- snippet engine
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer" -- buffer completions ?=From the file or all open buffers?
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completion
+  use "saadparwaiz1/cmp_luasnip" -- for snippet completions
+  use "hrsh7th/cmp-nvim-lsp" -- lsp completions
+
+  use "L3MON4D3/LuaSnip" --snippet engine
 
 
+  -- NOT READ UP AT ALL - MUST GO THROUGH IT ALL
+  -- LSP
+  use "neovim/nvim-lspconfig" -- setup LSP
+  use "williamboman/mason.nvim" -- easy to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,4 +1,4 @@
--- THIS IS SYNCED WITH TREESITTER
+-- THIS IS (going to be) SYNCED WITH TREESITTER
 
 -- GRUVBOX
 require("gruvbox").setup({
