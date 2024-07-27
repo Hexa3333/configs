@@ -23,4 +23,19 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
+
+  diagnostics = {
+    enable = true,
+    icons = {
+      error = "",
+      warning = "",
+      info = ""
+    }
+  },
+
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+    ignore_list = {}
+  }
 })

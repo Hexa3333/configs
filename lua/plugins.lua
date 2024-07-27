@@ -55,6 +55,10 @@ return packer.startup(function(use)
   -- INSTALL A MARKDOWN PREVIEWER
   use "ellisonleao/gruvbox.nvim"
 
+  -- ICONS
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+
   -- BUNLARA BAKIN
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -77,10 +81,6 @@ return packer.startup(function(use)
   -- Telescope (Fuzzyfinder)
   use "nvim-telescope/telescope.nvim"
 
-  use "nvim-tree/nvim-tree.lua"
-
-  -- NvimTree
-  --use "nvim-tree/nvim-tree.lua"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
