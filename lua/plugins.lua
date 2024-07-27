@@ -77,6 +77,7 @@ return packer.startup(function(use)
   -- Telescope (Fuzzyfinder)
   use "nvim-telescope/telescope.nvim"
 
+  use "nvim-tree/nvim-tree.lua"
 
   -- NvimTree
   --use "nvim-tree/nvim-tree.lua"

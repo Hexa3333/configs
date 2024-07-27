@@ -88,4 +88,5 @@ vim.g.maplocalleader = " "
 
 
 -- NvimTree
---keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
