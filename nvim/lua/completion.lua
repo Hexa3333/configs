@@ -53,11 +53,10 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
-  
   mapping = {
-    -- Not necessary ["<C-k>"] = cmp.mapping.select_prev_item(), -- prev item in drop-down
-		-- Not necessary ["<C-j>"] = cmp.mapping.select_next_item(), -- next item in drop-down
-    -- Not necessary ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- Scroll through explanation
+    -- Not necessary (replaced with tabs) ["<C-k>"] = cmp.mapping.select_prev_item(), -- prev item in drop-down
+		-- Not necessary (replaced with tabs) ["<C-j>"] = cmp.mapping.select_next_item(), -- next item in drop-down
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- Scroll through explanation
     ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }), -- Scroll through explanation
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
@@ -113,14 +112,15 @@ cmp.setup {
         --  buffer = "[Buffer]",
         --  path = "[Path]",
         --})[entry.source.name]
-      
+
       return vim_item
     end,
   },
-  
-  
+
+
   sources = {
     -- ORDERING SETS PRECEDENCE
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "path" },
     { name = "buffer" },

@@ -55,6 +55,10 @@ return packer.startup(function(use)
   -- INSTALL A MARKDOWN PREVIEWER
   use "ellisonleao/gruvbox.nvim"
 
+  -- ICONS
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+
   -- BUNLARA BAKIN
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -72,7 +76,11 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- setup LSP
   use "williamboman/mason.nvim" -- easy to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
+  use "jose-elias-alvarez/null-ls.nvim" -- LSP diagnostics and code actions
+
+  -- Telescope (Fuzzyfinder)
+  use "nvim-telescope/telescope.nvim"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
