@@ -1,3 +1,5 @@
+-- Null-ls: Use the neovim process as a language server to inject LSP diagnostics, code actions, and more via Lua.
+
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
 	return

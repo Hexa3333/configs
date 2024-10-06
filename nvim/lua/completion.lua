@@ -53,6 +53,8 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+
+  -- MAPPINGS
   mapping = {
     -- Not necessary (replaced with tabs) ["<C-k>"] = cmp.mapping.select_prev_item(), -- prev item in drop-down
 		-- Not necessary (replaced with tabs) ["<C-j>"] = cmp.mapping.select_next_item(), -- next item in drop-down

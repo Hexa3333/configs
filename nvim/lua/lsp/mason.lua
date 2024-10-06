@@ -1,4 +1,6 @@
--- SET THESE FROM MASON SERVERS
+-- Mason: Package manager for LSPs and etc.
+
+-- Mason language servers
 local servers = {
   "lua_ls",
   "clangd"
@@ -32,8 +34,8 @@ local opts = {}
 
 for _, server in pairs(servers) do
 	opts = {
-		on_attach = require("lsp.handlers_keymaps").on_attach,
-		capabilities = require("lsp.handlers_keymaps").capabilities,
+		on_attach = require("lsp.config").on_attach,
+		capabilities = require("lsp.config").capabilities,
 	}
 
 	server = vim.split(server, "@")[1]

@@ -4,5 +4,5 @@ if not status_ok then
 end
 
 require "lsp.mason"
-require("lsp.handlers_keymaps").setup()
+require("lsp.config").setup()
 require "lsp.null-ls"

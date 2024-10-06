@@ -35,4 +35,3 @@ o.sidescrolloff = 8
 
 vim.cmd "set whichwrap+=<,>,[,],h,l" -- wrap around with left/right keys
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
