@@ -3,7 +3,8 @@
 -- Mason language servers
 local servers = {
   "lua_ls",
-  "clangd"
+  "clangd",
+  "pyright"
 }
 
 local settings = {

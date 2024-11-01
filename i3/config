@@ -180,4 +180,4 @@ bar {
 }
 
 # xsnip
-bindsym $mod+Shift+s exec xsnip
+bindsym $mod+Shift+s exec xsnip -c
