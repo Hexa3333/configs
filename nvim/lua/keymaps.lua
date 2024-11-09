@@ -68,19 +68,9 @@ vim.g.maplocalleader = " "
   -- cancel visual mode
   keymap("v", "jk", "<ESC>", opts)
 
--- Terminal --
-  -- Better terminal navigation
-  keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-  keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-  keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-  keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
-
 -- WRITE/QUIT --
   keymap("n", "<C-s>", ":w<CR>", opts)
   keymap("n", "<C-q>", ":q<CR>", opts)
-
-
 
   -- (Deleting cuts)
   -- KEEP YOUR CLIPBOARD AFTER PASTING OVER
@@ -88,5 +78,8 @@ vim.g.maplocalleader = " "
 
 
 -- NvimTree
-keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
+  keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
+
+-- Telescope
+  keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
+  keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)

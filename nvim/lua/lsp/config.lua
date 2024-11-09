@@ -61,8 +61,7 @@ local function lsp_highlight_document(client)
   end
 end
 
--- KEYMAPS
--- Private function
+-- !KEYMAPS!
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- Go to definition
@@ -77,12 +76,31 @@ local function lsp_keymaps(bufnr)
 end
 
 ------------------------------
--- SPESIFIC CODE FOR LANGUAGES
+-- SPESIFIC CODE FOR LANGUAGES SECTION
 ------------------------------
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+
+  -- lua_ls: Disable unused-local
+  if client.name == "lua_ls" then
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+      if result.diagnostics then
+        local filtered_diagnostics = {}
+        for _, diagnostic in ipairs(result.diagnostics) do
+          -- Check for diagnostic code related to "unused-code"
+          if diagnostic.code ~= "unused-local" and diagnostic.code ~= "unused-function" and diagnostic.code ~= "undefined-global" then
+            table.insert(filtered_diagnostics, diagnostic)
+          end
+
+        end
+        result.diagnostics = filtered_diagnostics
+      end
+      vim.lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, config)
+    end
+  end
+
 end
 --------------------------------------------------------------------------
 
